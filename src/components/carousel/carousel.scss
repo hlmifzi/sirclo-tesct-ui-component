@@ -1,0 +1,33 @@
+.carousel{
+    position: relative;
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
+
+
+.previous {
+    left: 0px;
+    position: absolute;
+    top: 48%;
+    color: #fff !important;
+    z-index: 999;
+    background-color: rgba(0,0,0,.74);
+    padding: 10px;
+    cursor: pointer;
+    outline-width: 0;
+}
+
+
+.next {
+    right: 0px;
+    position: absolute;
+    top: 48%;
+    color: #fff !important;
+    z-index: 999;
+    background-color: rgba(0,0,0,.74);
+    padding: 10px;
+    cursor: pointer;
+    outline-width: 0;
+}
