@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { Card } from '../cards/Card'
+
 import './slicker.scss';
 
 const Interfaces = {
@@ -26,7 +29,13 @@ export const Slicker = ({ imageList, width, ...rest }) => (
       </div>
 
       <div className="slicker__product">
-        ini akan jadi card product
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   </section>

@@ -1,0 +1,47 @@
+@import "../../scss/mixins.scss";
+
+.card {
+    width: 300px;
+    margin-right: 10px;   
+    flex: 0 0 auto; 
+    background-color: var(--n-000);
+    .card__image {
+        position: relative;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .badge__diskon{
+        width: 35px;
+        height: 40px;
+        position: absolute;
+        @include alignFlex(flex-start);
+        justify-content: center;
+        color: var(--n-100);
+        font-size: 8pt;
+        right: 0;
+        bottom: -35px;
+        background-color: red;
+      
+    }
+}
+
+.product__category__card{
+    color: var(--n-600);
+    font-size: 8pt;
+}
+
+.product_desc{
+    color: var(--n-900);
+    font-size: 10pt;
+}
+
+.triangle{
+    border-left: 18px solid transparent;
+    border-right:18px solid transparent;
+    border-bottom: 10px solid red;
+    position: absolute;
+    bottom: -10px;
+    transform: rotate(180deg); 
+}
