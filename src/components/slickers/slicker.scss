@@ -5,7 +5,8 @@
     .slicker__top {
         @include spaceBetweenFlex;
         width: 100%;
-       
+        padding: 0.01em 45px;
+
         p {
             font-weight: 600;
         }
@@ -13,8 +14,10 @@
 
     .slicker__product{
         display: flex;
+        width: 100%;
         flex-wrap: nowrap;
         overflow-x: auto;
+        padding: 0.01em 45px;
         -webkit-overflow-scrolling: touch;
         -ms-overflow-style: -ms-autohiding-scrollbar; 
     }
@@ -22,6 +25,44 @@
         
     .slicker__product::-webkit-scrollbar {
         display: none;
+    }
+
+    .previous {
+        left: 0px;
+        position: absolute;
+        top: 30%;
+        z-index: 999;
+        cursor: pointer;
+        outline-width: 0;
+        color: var(--n-900);
+    }
+
+    .previous > .MuiSvgIcon-root{
+        color: var(--n-900);
+    }
+
+    .previous:hover > .MuiSvgIcon-root{
+        color: #fff !important;        
+        background-color: rgba(0,0,0,.74);
+    }
+
+    .next > .MuiSvgIcon-root{
+        color: var(--n-900);
+    }
+
+    .next:hover > .MuiSvgIcon-root{
+        color: #fff !important;        
+        background-color: rgba(0,0,0,.74);
+    }
+
+    .next {
+        right: 0px;
+        position: absolute;
+        top: 30%;
+        z-index: 999;
+        cursor: pointer;
+        outline-width: 0;
+        color: var(--n-900);
     }
 }
 

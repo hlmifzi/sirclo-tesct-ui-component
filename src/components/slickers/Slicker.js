@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Icon from '../icons/Icon'
 import { Card } from '../cards/Card'
 
 import './slicker.scss';
 
 const Interfaces = {
-  imageList: PropTypes.arrayOf({})
+  title: PropTypes.string,
+  imageList: PropTypes.arrayOf({}),
+  slickerId: PropTypes.string
 }
 
 const defaultProps = {
+  title: "This is For Title",
   imageList: [
     { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
     { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
@@ -17,29 +21,56 @@ const defaultProps = {
     { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
     { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
   ],
+  slickerId: "slicker_id",
 };
 
-export const Slicker = ({ imageList, width, ...rest }) => (
-  <section>
-    <div className="slicker">
+export const Slicker = ({ title, imageList, width, slickerId, ...rest }) => {
+  const onClickNextSlide = () => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      document.getElementById(slickerId).scrollLeft += 30;
+      scrollAmount += 30;
+      if (scrollAmount >= 300) window.clearInterval(slideTimer);
+    }, 25);
+  }
 
-      <div className="slicker__top">
-        <p>POPULAR IN WOMAN</p>
-        <div> ... </div>
-      </div>
+  const onClickPreviousSlide = () => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(function () {
+      document.getElementById(slickerId).scrollLeft -= 30;
+      scrollAmount += 30;
+      if (scrollAmount >= 300) window.clearInterval(slideTimer);
+    }, 25);
+  }
 
-      <div className="slicker__product">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+  return (
+    <section>
+      <div className="slicker">
+        <div className="slicker__top">
+          <p>{title}</p>
+          <div> ...ini tititk </div>
+        </div>
+
+        <div className="slicker__product" id={slickerId}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+
+          <a tabindex="0" onClick={onClickPreviousSlide} className="previous" aria-label="Previous Slide">
+            <Icon.NavigateBefore fontSize="large" />
+          </a>
+          <a tabindex="0" onClick={onClickNextSlide} className="next" aria-label="Next Slide">
+            <Icon.NavigateNext fontSize="large" />
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  )
+};
 
 Slicker.propTypes = Interfaces
 Slicker.defaultProps = defaultProps
