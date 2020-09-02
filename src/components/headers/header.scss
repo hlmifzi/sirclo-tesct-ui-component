@@ -1,3 +1,5 @@
+@import "../../scss/mixins.scss";
+
 .header{
   display: block;
   position: sticky;
@@ -6,30 +8,31 @@
 }
 
 .header__top {
-  display: flex;
+  @include spaceBetweenFlex();
   background-color: var(--n-300);
   color: var(--n-900);
-  justify-content: space-between;
-  padding: 15px 20px;
+  padding: 0 20px;
   font-size: 12px;
   width: 100%;
 
   .header__menu{
-    display: flex;
+    @include centerFlex();
     flex: 1;
-    justify-content: center;
   }
   
   .header__search{
-    display: flex;
-    justify-content:flex-end;
+    @include centerFlex();
   }
   
   .header__option{
-    display: flex;
-    padding:0 30px;
-    align-items: center;
-    cursor: pointer;
+    @include alignFlex(center);
+    padding:15px 30px;
+    @include cursorPointer()
+  }
+
+  .header__option:hover {
+    background-color: var(--n-900);
+    color: var(--n-300);  
   }
 
   .header__search > .MuiSvgIcon-root{
@@ -39,8 +42,7 @@
 
 
 .header__bottom{
-  display: flex;
-  justify-content: space-between;
+  @include spaceBetweenFlex;
   background-color: var(--n-000);
   color: var(--n-900);
   font-size: 12px;
@@ -50,9 +52,8 @@
 }
 
 .header__language{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @include alignFlex(center);
+  flex: 0.33;
 }
 
 .header__language > p {
@@ -61,22 +62,20 @@
 
 .header__logo__middle{
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
+  flex: 0.33;  
   img{
     width: 250px;
   }
 }
 
 .header__right{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include alignFlex(center);
+  flex: 0.33;
+  justify-content: flex-end;
 
 }
 .header__cart{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include alignFlex(center);
 }

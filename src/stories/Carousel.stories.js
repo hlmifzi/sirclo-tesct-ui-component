@@ -11,7 +11,7 @@ const Template = (args) => <Carousel {...args} />;
 
 export const CarouselStandard = Template.bind({});
 CarouselStandard.args = {
-  menus: [
+  imageList: [
     { imgUrl: 'https://ibb.co/FhcX3z2', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
     { imgUrl: 'https://ibb.co/FhcX3z2', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
     { imgUrl: 'https://ibb.co/FhcX3z2', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },

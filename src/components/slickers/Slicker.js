@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../icons/Icon'
-import './carousel.scss';
+import './slicker.scss';
 
 const Interfaces = {
   imageList: PropTypes.arrayOf({})
@@ -17,17 +16,21 @@ const defaultProps = {
   ],
 };
 
-export const Carousel = ({ imageList, width, ...rest }) => (
-  <div class="carousel" >
-    <img src="https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png" alt="slider-1" />
-    <a tabindex="0" className="previous button__slide" aria-label="Previous Slide">
-      <Icon.NavigateBefore fontSize="large" />
-    </a>
-    <a tabindex="0" className="next button__slide" aria-label="Next Slide">
-      <Icon.NavigateNext fontSize="large" />
-    </a>
-  </div>
+export const Slicker = ({ imageList, width, ...rest }) => (
+  <section>
+    <div className="slicker">
+
+      <div className="slicker__top">
+        <p>POPULAR IN WOMAN</p>
+        <div> ... </div>
+      </div>
+
+      <div className="slicker__product">
+        ini akan jadi card product
+      </div>
+    </div>
+  </section>
 );
 
-Carousel.propTypes = Interfaces
-Carousel.defaultProps = defaultProps
+Slicker.propTypes = Interfaces
+Slicker.defaultProps = defaultProps

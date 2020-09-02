@@ -1,0 +1,13 @@
+@import "../../scss/mixins.scss";
+
+.slicker {
+    .slicker__top {
+        @include spaceBetweenFlex;
+        width: 100%;
+    }
+
+    .slicker__product{
+        display: flex;
+    }
+}
+

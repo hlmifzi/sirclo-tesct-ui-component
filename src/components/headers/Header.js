@@ -29,53 +29,59 @@ const defaultProps = {
 
 export const Header = ({ menus, isLoggin }) => (
   <div className="header">
-    <div className="header__top">
-      <div className="header__menu">
-        {
-          menus.map((v, i) => (
-            <div className="header__option">
-              {v.title}
-            </div>
-          ))
-        }
+    <header>
+      <div className="header__top">
+        <div className="header__menu">
+          {
+            menus.map((v, i) => (
+              <div className="header__option" onClick={() => window.open(v.url)} >
+                {v.title}
+              </div>
+            ))
+          }
+        </div>
+        <div className="header__search">
+          <Icon.Search />
+        </div>
       </div>
+    </header>
 
-      <div className="header__search">
-        <Icon.Search />
-      </div>
-    </div>
 
 
     <Container>
-      <div className="header__bottom">
+      <nav>
 
-        <div className="header__language">
-          <select name="cars" id="cars">
-            <option value="volvo">IDR</option>
-            <option value="saab">US</option>
-          </select>
-          <p>BAHASA - <b>ENGLISH</b></p>
-        </div>
+        <div className="header__bottom">
 
-        <div className="header__logo__middle">
-          <img
-            src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
-            alt="brand-logo"
-          />
-        </div>
+          <div className="header__language">
+            <select name="cars" id="cars">
+              <option value="volvo">IDR</option>
+              <option value="saab">US</option>
+            </select>
+            <p>BAHASA - <b>ENGLISH</b></p>
+          </div>
 
-        <div className="header__right">
-          {isLoggin ? 'Hi, Helmi' : "Login / Register"}
-          <div className="header__cart">
-            <IconButton>
-              <Icon.LocalMall />
-            </IconButton>
+          <div className="header__logo__middle">
+            <img
+              src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
+              alt="brand-logo"
+            />
+          </div>
+
+          <div className="header__right">
+            {isLoggin ? 'Hi, Helmi' : "Login / Register"}
+            <div className="header__cart">
+              <IconButton>
+                <Icon.LocalMall />
+              </IconButton>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
+
     </Container>
 
-  </div>
+  </div >
 );
 
 Header.propTypes = Interfaces
