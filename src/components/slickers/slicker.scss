@@ -1,7 +1,7 @@
 @import "../../scss/mixins.scss";
 
 .slicker {
-
+    position: relative;
     .slicker__top {
         @include spaceBetweenFlex;
         width: 100%;
