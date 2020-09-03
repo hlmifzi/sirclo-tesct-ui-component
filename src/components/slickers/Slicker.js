@@ -47,11 +47,11 @@ export const Slicker = ({ title, imageList, width, slickerId, ...rest }) => {
     <section>
       <div className="slicker">
         <div className="slicker__top">
-          <p>{title}</p>
+          <p>{title.toUpperCase()}</p>
           <div> ...ini tititk </div>
         </div>
 
-        <div className="w-full p-20">
+        <div className="w-full px-16">
           <div className="slicker__product" id={slickerId}>
             <Card />
             <Card />

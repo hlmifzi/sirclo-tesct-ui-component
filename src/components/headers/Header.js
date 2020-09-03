@@ -69,6 +69,7 @@ export const Header = ({ menus, isLoggin }) => (
           <IconButton>
             <Icon.LocalMall />
           </IconButton>
+          0
         </div>
       </div>
     </div>
