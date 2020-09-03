@@ -8,23 +8,17 @@ import './slicker.scss';
 
 const Interfaces = {
   title: PropTypes.string,
-  imageList: PropTypes.arrayOf({}),
+  listProducts: PropTypes.arrayOf({}),
   slickerId: PropTypes.string
 }
 
 const defaultProps = {
   title: "This is For Title",
-  imageList: [
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-  ],
+  listProducts: [],
   slickerId: "slicker_id",
 };
 
-export const Slicker = ({ title, imageList, width, slickerId, ...rest }) => {
+export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
   const onClickNextSlide = () => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
@@ -48,18 +42,24 @@ export const Slicker = ({ title, imageList, width, slickerId, ...rest }) => {
       <div className="slicker">
         <div className="slicker__top">
           <p>{title.toUpperCase()}</p>
-          <div> ...ini tititk </div>
+          <div> ...ini titik titik </div>
         </div>
 
         <div className="w-full px-16">
           <div className="slicker__product" id={slickerId}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {
+              listProducts.map((v, i) => {
+                const discountExample = i === 3 ? 30 : false
+                return (
+                  <Card
+                    image_file={`https://${v.image_file}`}
+                    name={`v.name`}
+                    price={`IDR 150, 000`}
+                    discount={discountExample}
+                  />
+                )
+              })
+            }
 
             <a tabindex="0" onClick={onClickPreviousSlide} className="previous button__slide" aria-label="Previous Slide">
               <Icon.NavigateBefore fontSize="large" />
