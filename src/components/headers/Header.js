@@ -46,40 +46,32 @@ export const Header = ({ menus, isLoggin }) => (
       </div>
     </header>
 
+    <div className="header__bottom">
 
+      <div className="header__language">
+        <select name="cars" id="cars">
+          <option value="volvo">IDR</option>
+          <option value="saab">US</option>
+        </select>
+        <p>BAHASA - <b>ENGLISH</b></p>
+      </div>
 
-    <Container>
-      <nav>
+      <div className="header__logo__middle">
+        <img
+          src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
+          alt="brand-logo"
+        />
+      </div>
 
-        <div className="header__bottom">
-
-          <div className="header__language">
-            <select name="cars" id="cars">
-              <option value="volvo">IDR</option>
-              <option value="saab">US</option>
-            </select>
-            <p>BAHASA - <b>ENGLISH</b></p>
-          </div>
-
-          <div className="header__logo__middle">
-            <img
-              src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
-              alt="brand-logo"
-            />
-          </div>
-
-          <div className="header__right">
-            {isLoggin ? 'Hi, Helmi' : "Login / Register"}
-            <div className="header__cart">
-              <IconButton>
-                <Icon.LocalMall />
-              </IconButton>
-            </div>
-          </div>
+      <div className="header__right">
+        {isLoggin ? 'Hi, Helmi' : "Login / Register"}
+        <div className="header__cart">
+          <IconButton>
+            <Icon.LocalMall />
+          </IconButton>
         </div>
-      </nav>
-
-    </Container>
+      </div>
+    </div>
 
   </div >
 );

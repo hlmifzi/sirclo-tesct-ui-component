@@ -60,10 +60,10 @@ export const Slicker = ({ title, imageList, width, slickerId, ...rest }) => {
           <Card />
           <Card />
 
-          <a tabindex="0" onClick={onClickPreviousSlide} className="previous" aria-label="Previous Slide">
+          <a tabindex="0" onClick={onClickPreviousSlide} className="previous button__slide" aria-label="Previous Slide">
             <Icon.NavigateBefore fontSize="large" />
           </a>
-          <a tabindex="0" onClick={onClickNextSlide} className="next" aria-label="Next Slide">
+          <a tabindex="0" onClick={onClickNextSlide} className="next button__slide" aria-label="Next Slide">
             <Icon.NavigateNext fontSize="large" />
           </a>
         </div>
