@@ -53,7 +53,7 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
                 return (
                   <Card
                     image_file={`https://${v.image_file}`}
-                    name={`v.name`}
+                    name={v.name}
                     price={`IDR 150, 000`}
                     discount={discountExample}
                   />
