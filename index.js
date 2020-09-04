@@ -9,7 +9,7 @@ import image3 from './src/resource/image3.png'
 import image4 from './src/resource/image4.png'
 import image5 from './src/resource/image5.png'
 import image6 from './src/resource/image6.png'
-
+import logoFooter from './src/resource/logoFooter.png'
 export {
     Header,
     Carousel,
@@ -22,4 +22,5 @@ export {
     image4,
     image5,
     image6,
+    logoFooter
 }
