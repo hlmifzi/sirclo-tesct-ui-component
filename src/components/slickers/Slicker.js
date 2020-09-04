@@ -42,7 +42,7 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
       <div className="slicker">
         <div className="slicker__top">
           <p>{title.toUpperCase()}</p>
-          <div> ...ini titik titik </div>
+          <div> . . . </div>
         </div>
 
         <div className="w-full px-16">

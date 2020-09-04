@@ -46,7 +46,7 @@ export const Header = ({ menus, isLoggin }) => (
       </div>
     </header>
 
-    <div className="header__bottom">
+    <div className="header__bottom justify-center flex-wrap items-center">
 
       <div className="header__language">
         <select name="cars" id="cars">

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './modal.scss'
 import { useDidMount } from '../../../../../utils/componentLifeCycle'
 
-const Modal = () => {
+export const Modal = () => {
     const [fadeIn, setFadeIn] = useState('fadeIn')
     const [fadeOut, setFadeOut] = useState('')
     const [hidden, setHidden] = useState('')
@@ -58,5 +58,3 @@ const Modal = () => {
         </>
     )
 }
-
-export default Modal

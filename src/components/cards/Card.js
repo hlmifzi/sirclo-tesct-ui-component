@@ -19,7 +19,7 @@ const defaultProps = {
 export const Card = ({ image_file, name, price, discount, ...rest }) => (
   <div className="card">
     <div className="card__image">
-      <img src={image_file} />
+      <img src={image_file} alt={name} />
       {
         discount &&
         <>

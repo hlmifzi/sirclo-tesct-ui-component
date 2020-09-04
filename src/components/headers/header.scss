@@ -1,4 +1,4 @@
-@import "../../scss/mixins.scss";
+@import "../../scss/_mixins.scss";
 
 .header{
   display: block;
@@ -83,3 +83,4 @@
 .header__cart{
   @include alignFlex(center);
 }
+

@@ -1,15 +1,28 @@
 .carousel{
     position: relative;
     width: 100%;
-    img{
+
+    .list__banner{
+        display: flex;
         width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar; 
+        img{
+            width: 100%;
+        }
+    }
+
+    .list__banner::-webkit-scrollbar {
+        display: none;
     }
 
 
     .previous {
         left: 0px;
         position: absolute;
-        top: 48%;
+        top: 45%;
         color: #fff !important;
         z-index: 0.5;
         background-color: rgba(0,0,0,.74);
@@ -22,7 +35,7 @@
     .next {
         right: 0px;
         position: absolute;
-        top: 48%;
+        top: 45%;
         color: #fff !important;
         z-index: 0.5;
         background-color: rgba(0,0,0,.74);

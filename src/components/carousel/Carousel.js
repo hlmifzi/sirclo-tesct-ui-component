@@ -4,30 +4,65 @@ import Icon from '../icons/Icon'
 import './carousel.scss';
 
 const Interfaces = {
-  imageList: PropTypes.arrayOf({})
+  imageLists: PropTypes.arrayOf({}),
+  id: PropTypes.string
 }
 
 const defaultProps = {
-  imageList: [
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
-    { imgUrl: 'https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png', url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/' },
+  imageLists: [
+    { image_file: '', title: '' },
+    { image_file: '', title: '' }
   ],
+  id: 'Carousel',
 };
 
-export const Carousel = ({ imageList, width, ...rest }) => (
-  <div class="carousel" >
-    <img src="https://i.ibb.co/p1NQwdc/Screen-Shot-2020-09-02-at-1-26-25-AM.png" alt="slider-1" />
-    <a tabindex="0" className="previous button__slide" aria-label="Previous Slide">
-      <Icon.NavigateBefore fontSize="large" />
-    </a>
-    <a tabindex="0" className="next button__slide" aria-label="Next Slide">
-      <Icon.NavigateNext fontSize="large" />
-    </a>
-  </div>
-);
+export const Carousel = ({ imageLists, id, ...rest }) => {
+
+  const onClickNextSlide = () => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      document.getElementById(id).scrollLeft += 30;
+      scrollAmount += 30;
+      if (scrollAmount >= 300) window.clearInterval(slideTimer);
+    }, 25);
+  }
+
+  const onClickPreviousSlide = () => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(function () {
+      document.getElementById(id).scrollLeft -= 30;
+      scrollAmount += 30;
+      if (scrollAmount >= 300) window.clearInterval(slideTimer);
+    }, 25);
+  }
+
+  return (
+    <div className="carousel">
+      <div className='list__banner' id={id}>
+        {
+          imageLists.map((v, i) => {
+            console.log(i)
+            return (
+              <img
+                key={i}
+                src={`https://${v.image_file}`}
+                alt={v.title}
+                className="mr-4"
+                style={{ width: '10000px' }}
+              />
+            )
+          })
+        }
+      </div>
+      <a tabindex="0" className="previous button__slide" aria-label="Previous Slide">
+        <Icon.NavigateBefore fontSize="large" onClick={onClickPreviousSlide} />
+      </a>
+      <a tabindex="0" className="next button__slide" aria-label="Next Slide">
+        <Icon.NavigateNext fontSize="large" onClick={onClickNextSlide} />
+      </a>
+    </div>
+  )
+};
 
 Carousel.propTypes = Interfaces
 Carousel.defaultProps = defaultProps
