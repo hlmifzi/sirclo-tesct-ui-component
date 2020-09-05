@@ -1,0 +1,52 @@
+.three__image{
+    display: flex;
+    flex-direction: row;
+    img{
+        flex: auto;
+    } 
+}
+
+.description__shop {
+    border-top: 2px solid  var(--n-600)
+}
+
+.subcribe__section{
+    background-color: var(--n-300);
+    height: 96px;
+}
+
+.image__section{
+    display: flex;
+    flex-direction: row;
+    img{
+        flex: auto;
+    }
+}
+
+.footer__section{
+    background-color: var(--n-000);
+    height: 450px;
+    .description{
+        flex: 0.4;
+        font-size: 9pt;
+        line-height: 2rem;
+    }
+
+    .fast__menu > p  {
+        font-size: 9pt;
+    }
+}
+.input__subcribe{
+    border-bottom: 2px solid var(--n-800);
+    display: inline-flex;
+}
+
+.input__subcribe > input{
+    border: none ;
+    background-color: transparent;
+    outline-width: 0;
+    position: relative;
+}
+
+
+

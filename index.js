@@ -10,6 +10,12 @@ import image4 from './src/resource/image4.png'
 import image5 from './src/resource/image5.png'
 import image6 from './src/resource/image6.png'
 import logoFooter from './src/resource/logoFooter.png'
+import FooterDescription from './src/components/pages/static/FooterDescription'
+import ThreeImage from './src/components/pages/static/ThreeImage'
+import FooterImage from './src/components/pages/static/FooterImage'
+import Footer from './src/components/pages/static/Footer'
+import FooterSubcribe from './src/components/pages/static/FooterSubcribe'
+
 export {
     Header,
     Carousel,
@@ -22,5 +28,10 @@ export {
     image4,
     image5,
     image6,
-    logoFooter
+    logoFooter,
+    FooterDescription,
+    ThreeImage,
+    FooterImage,
+    Footer,
+    FooterSubcribe
 }
