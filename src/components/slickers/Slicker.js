@@ -37,6 +37,11 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
     }, 25);
   }
 
+  const propsCard = {
+    ...rest,
+
+  }
+
   return (
     <section>
       <div className="slicker">
@@ -67,6 +72,7 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
                     name={v.name}
                     price={`IDR 150, 000`}
                     discount={discountExample}
+                    {...rest}
                   />
                 )
               })

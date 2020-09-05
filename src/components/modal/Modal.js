@@ -1,13 +1,29 @@
 import React, { useState } from 'react'
-import './modal.scss'
-import useHome from '../../../../../page/home/hook/useHome'
+import PropTypes from 'prop-types';
 
-export const Modal = () => {
+import './modal.scss'
+
+const Interfaces = {
+    image_file: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.string,
+    discount: PropTypes.number,
+    _openModal: PropTypes.func
+
+}
+
+const defaultProps = {
+    image_file: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
+    name: 'Product Name Display',
+    price: 'IDR 250,000',
+    discount: 20,
+    _openModal: () => { }
+};
+
+export const Modal = ({ _closeModal, product }) => {
     const [fadeIn, setFadeIn] = useState('fadeIn')
     const [fadeOut, setFadeOut] = useState('')
     const [hidden, setHidden] = useState('')
-    const { _closeModal } = useHome().action
-    const { product } = useHome().state
 
 
     const modalClose = () => {
@@ -56,3 +72,7 @@ export const Modal = () => {
         </>
     )
 }
+
+Modal.propTypes = Interfaces
+Modal.Modal = defaultProps
+

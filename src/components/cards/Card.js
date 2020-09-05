@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useHome from '../../../../../page/home/hook/useHome'
-
 import './card.scss';
 
 const Interfaces = {
@@ -10,18 +8,20 @@ const Interfaces = {
   name: PropTypes.string,
   price: PropTypes.string,
   discount: PropTypes.number,
+  _openModal: PropTypes.func
+
 }
 
 const defaultProps = {
   image_file: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
   name: 'Product Name Display',
   price: 'IDR 250,000',
-  discount: 20
+  discount: 20,
+  _openModal: () => { }
 };
 
 export const Card = (props) => {
-  const { image_file, name, price, discount } = props
-  const { _openModal } = useHome().action
+  const { image_file, name, price, discount, _openModal } = props
 
   const numberPrice = price.match(/\d/g).join("")
 
