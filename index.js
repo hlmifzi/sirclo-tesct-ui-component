@@ -15,6 +15,7 @@ import ThreeImage from './src/components/pages/static/ThreeImage'
 import FooterImage from './src/components/pages/static/FooterImage'
 import Footer from './src/components/pages/static/Footer'
 import FooterSubcribe from './src/components/pages/static/FooterSubcribe'
+import Skeleton from './src/components/skeleton/Skeleton'
 
 export {
     Header,
@@ -33,5 +34,6 @@ export {
     ThreeImage,
     FooterImage,
     Footer,
-    FooterSubcribe
+    FooterSubcribe,
+    Skeleton
 }
