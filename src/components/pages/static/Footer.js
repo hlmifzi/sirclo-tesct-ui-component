@@ -8,7 +8,7 @@ const Footer = () => {
             <section className="flex px-16 pt-20 flex-wrap justify-between footer__section ">
                 <div className="description">
                     <img src={logoFooter} alt="" />
-                    <o>Mavelin is a WordPress E-Commerce theme focused to collecting, grouping your content Then selling your stuffs. it's perfect for small-to-high traffic e-commercebussiness site,</o>
+                    <p>Mavelin is a WordPress E-Commerce theme focused to collecting, grouping your content Then selling your stuffs. it's perfect for small-to-high traffic e-commercebussiness site,</p>
                     <div>COPYRIGHTS 2017 MAVELIN POWERED BY SIRCLO</div>
                 </div>
                 <div className="flex flex-col justify-between pb-20 fast__menu">

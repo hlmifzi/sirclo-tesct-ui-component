@@ -8,7 +8,7 @@ import './slicker.scss';
 
 const Interfaces = {
   title: PropTypes.string,
-  listProducts: PropTypes.arrayOf({}),
+  listProducts: PropTypes.array,
   slickerId: PropTypes.string
 }
 
@@ -42,15 +42,15 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
       <div className="slicker">
         <div className="slicker__top">
           <p>{title.toUpperCase()}</p>
-          <ol class="carousel-indicators">
-            <li class="inline-block mr-3">
-              <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+          <ol className="carousel-indicators">
+            <li className="inline-block mr-3">
+              <label htmlFor="carousel-1" className="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
             </li>
-            <li class="inline-block mr-3">
-              <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+            <li className="inline-block mr-3">
+              <label htmlFor="carousel-2" className="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
             </li>
-            <li class="inline-block mr-3">
-              <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+            <li className="inline-block mr-3">
+              <label htmlFor="carousel-3" className="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
             </li>
           </ol>
         </div>
@@ -72,10 +72,10 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
               })
             }
 
-            <a tabindex="0" onClick={onClickPreviousSlide} className="previous button__slide" aria-label="Previous Slide">
+            <a tabIndex="0" onClick={onClickPreviousSlide} className="previous button__slide" aria-label="Previous Slide">
               <Icon.NavigateBefore fontSize="large" />
             </a>
-            <a tabindex="0" onClick={onClickNextSlide} className="next button__slide" aria-label="Next Slide">
+            <a tabIndex="0" onClick={onClickNextSlide} className="next button__slide" aria-label="Next Slide">
               <Icon.NavigateNext fontSize="large" />
             </a>
           </div>

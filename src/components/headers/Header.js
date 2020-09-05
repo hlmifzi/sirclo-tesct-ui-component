@@ -8,7 +8,7 @@ import { Container } from '../grid/Container'
 import './header.scss';
 
 const Interfaces = {
-  menus: PropTypes.arrayOf({}),
+  menus: PropTypes.array,
   isLoggin: PropTypes.bool
 }
 
@@ -34,7 +34,7 @@ export const Header = ({ menus, isLoggin }) => (
         <div className="header__menu">
           {
             menus.map((v, i) => (
-              <div className="header__option" onClick={() => window.open(v.url)} >
+              <div key={i} className="header__option" onClick={() => window.open(v.url)} >
                 {v.title}
               </div>
             ))

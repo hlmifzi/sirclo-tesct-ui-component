@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../icons/Icon'
 import './carousel.scss';
 
 const Interfaces = {
-  imageLists: PropTypes.arrayOf({}),
+  imageLists: PropTypes.array,
   id: PropTypes.string
 }
 
@@ -17,18 +16,17 @@ const defaultProps = {
 };
 
 export const Carousel = ({ imageLists, id, ...rest }) => {
-
   return (
 
-    <div class="carousel relative shadow-2xl bg-white">
-      <div class="carousel-inner relative overflow-hidden w-full">
+    <div className="carousel relative shadow-2xl bg-white">
+      <div className="carousel-inner relative overflow-hidden w-full">
         {/* <!--Slide 1--> */}
         {
           imageLists.map((v, i) => {
             return (
-              <>
-                <input class="carousel-open" type="radio" id={`carousel-${i}`} name="carousel" aria-hidden="true" hidden="" checked="checked" />
-                <div class="carousel-item absolute opacity-0" >
+              <div key={i}>
+                <input className="carousel-open" type="radio" id={`carousel-${i}`} name="carousel" aria-hidden="true" hidden="" defaultChecked />
+                <div className="carousel-item absolute opacity-0" >
                   <img
                     key={i}
                     src={`https://${v.image_file}`}
@@ -36,20 +34,20 @@ export const Carousel = ({ imageLists, id, ...rest }) => {
                     style={{ width: '100%', height: '100%' }}
                   />
                 </div>
-                <label for={`carousel-${i}`} class={`prev control-${i} prev-carousel w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 left-0 my-auto`} >‹</label>
-                <label for={`carousel-${i}`} class={`next control-${i} w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 right-0 my-auto`} >›</label>
-              </>
+                <label htmlFor={`carousel-${i}`} className={`prev control-${i} w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 left-0 my-auto`} >‹</label>
+                <label htmlFor={`carousel-${i}`} className={`next control-${i} w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 right-0 my-auto`} >›</label>
+              </div>
             )
           })
         }
 
-        {/* <!-- Add additional indicators for each slide--> */}
-        <ol class="carousel-indicators">
+        {/* <!-- Add additional indicators htmlFor each slide--> */}
+        <ol className="carousel-indicators">
           {
             imageLists.map((v, i) => {
               return (
-                <li class="inline-block mr-3">
-                  <label for={`carousel-${i}`} class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-black-700">•</label>
+                <li key={i} className="inline-block mr-3">
+                  <label htmlFor={`carousel-${i}`} className="carousel-bullet cursor-pointer block text-4xl text-white hover:text-black-700">•</label>
                 </li>
               )
             })
