@@ -13,7 +13,7 @@ export const CardProduct = Template.bind({});
 CardProduct.args = {
     product: [
         {
-            imgUrl: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
+            image_file: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
             url: 'https://www.linkedin.com/in/helmi-fauzi-12b872143/',
             category: 'ACCESSORIES',
             name: 'Product Name Display',

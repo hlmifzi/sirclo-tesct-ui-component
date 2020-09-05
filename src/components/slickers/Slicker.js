@@ -37,11 +37,6 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
     }, 25);
   }
 
-  const propsCard = {
-    ...rest,
-
-  }
-
   return (
     <section>
       <div className="slicker">

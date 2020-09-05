@@ -1,6 +1,14 @@
 import React from 'react'
 import '../../scss/skeleton/placeholder-loading.scss'
-const Skeleton = () => {
+import PropTypes from 'prop-types';
+
+const Interfaces = {
+}
+
+const defaultProps = {
+};
+
+export const Skeleton = () => {
     return (
         <div class="ph-item" >
             <div class="ph-col-12">
@@ -20,4 +28,6 @@ const Skeleton = () => {
     )
 }
 
-export default Skeleton
+Skeleton.propTypes = Interfaces
+Skeleton.defaultProps = defaultProps
+

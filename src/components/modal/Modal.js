@@ -4,19 +4,18 @@ import PropTypes from 'prop-types';
 import './modal.scss'
 
 const Interfaces = {
-    image_file: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.string,
-    discount: PropTypes.number,
-    _openModal: PropTypes.func
+    _closeModal: PropTypes.func,
+    product: PropTypes.object,
 
 }
 
 const defaultProps = {
-    image_file: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
-    name: 'Product Name Display',
-    price: 'IDR 250,000',
-    discount: 20,
+    product: {
+        image_file: 'https://files.sirclocdn.xyz/frontend-test-37/images/women-product-3.jpg',
+        name: 'Women Product 3',
+        price: 'IDR 150, 000',
+        discount: 0
+    },
     _openModal: () => { }
 };
 

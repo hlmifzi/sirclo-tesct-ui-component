@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { IconButton } from '@material-ui/core'
 
 import Icon from '../icons/Icon'
-import { Container } from '../grid/Container'
 
 import './header.scss';
 

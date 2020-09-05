@@ -1,7 +1,7 @@
 This project was bootstrapped with [Story](https://github.com/facebook/create-react-app).
 
 ### What's storybook
-storybook is your deasign system component guide
+storybook is your design system component guide
 
 ### npm i
 to instal package dependencies
