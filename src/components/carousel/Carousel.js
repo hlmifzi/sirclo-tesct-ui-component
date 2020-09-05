@@ -18,48 +18,46 @@ const defaultProps = {
 
 export const Carousel = ({ imageLists, id, ...rest }) => {
 
-  const onClickNextSlide = () => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(() => {
-      document.getElementById(id).scrollLeft += 400;
-      scrollAmount += 400;
-      if (scrollAmount >= 300) window.clearInterval(slideTimer);
-    }, 100);
-  }
-
-  const onClickPreviousSlide = () => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(function () {
-      document.getElementById(id).scrollLeft -= 400;
-      scrollAmount += 400;
-      if (scrollAmount >= 300) window.clearInterval(slideTimer);
-    }, 100);
-  }
-
   return (
-    <div className="carousel">
-      <div className='list__banner' id={id}>
+
+    <div class="carousel relative shadow-2xl bg-white">
+      <div class="carousel-inner relative overflow-hidden w-full">
+        {/* <!--Slide 1--> */}
         {
           imageLists.map((v, i) => {
             return (
-              <img
-                key={i}
-                src={`https://${v.image_file}`}
-                alt={v.title}
-                className="mr-4"
-                style={{ width: '10000px' }}
-              />
+              <>
+                <input class="carousel-open" type="radio" id={`carousel-${i}`} name="carousel" aria-hidden="true" hidden="" checked="checked" />
+                <div class="carousel-item absolute opacity-0" >
+                  <img
+                    key={i}
+                    src={`https://${v.image_file}`}
+                    alt={v.title}
+                    style={{ width: '180%', height: '800px' }}
+                  />
+                </div>
+                <label for={`carousel-${i}`} class={`prev control-${i} prev-carousel w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 left-0 my-auto`} >‹</label>
+                <label for={`carousel-${i}`} class={`next control-${i} w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 right-0 my-auto`} >›</label>
+              </>
             )
           })
         }
-      </div>
-      <a tabindex="0" className="previous button__slide" aria-label="Previous Slide">
-        <Icon.NavigateBefore fontSize="large" onClick={onClickPreviousSlide} />
-      </a>
-      <a tabindex="0" className="next button__slide" aria-label="Next Slide">
-        <Icon.NavigateNext fontSize="large" onClick={onClickNextSlide} />
-      </a>
-    </div>
+
+        {/* <!-- Add additional indicators for each slide--> */}
+        <ol class="carousel-indicators">
+          {
+            imageLists.map((v, i) => {
+              return (
+                <li class="inline-block mr-3">
+                  <label for={`carousel-${i}`} class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-black-700">•</label>
+                </li>
+              )
+            })
+          }
+        </ol>
+
+      </div >
+    </div >
   )
 };
 
