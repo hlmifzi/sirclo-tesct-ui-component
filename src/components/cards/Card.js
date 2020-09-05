@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import useHome from '../../../../../page/home/hook/useHome'
+
 import './card.scss';
 
 const Interfaces = {
@@ -16,30 +19,35 @@ const defaultProps = {
   discount: 20
 };
 
-export const Card = ({ image_file, name, price, discount, ...rest }) => (
-  <div className="card">
-    <div className="card__image">
-      <img src={image_file} alt={name} />
-      {
-        discount &&
-        <>
-          <div className="badge__diskon">
-            <p>
-              OFF<br />{discount}%
-            </p>
-            <div className="triangle"></div>
-          </div>
-        </>
-      }
+export const Card = (props) => {
+  const { image_file, name, price, discount } = props
+  const { _openModal } = useHome().action
 
+  return (
+    <div className="card" onClick={() => _openModal(props)}>
+      <div className="card__image">
+        <img src={image_file} alt={name} />
+        {
+          discount &&
+          <>
+            <div className="badge__diskon">
+              <p>
+                OFF<br />{discount}%
+            </p>
+              <div className="triangle"></div>
+            </div>
+          </>
+        }
+
+      </div>
+      <div className="slicker__paragraph">
+        <div className="product__category__card">Accessories</div>
+        <div className="product_desc">{name}</div>
+        <div className="product_desc">{price}</div>
+      </div>
     </div>
-    <div className="slicker__paragraph">
-      <div className="product__category__card">Accessories</div>
-      <div className="product_desc">{name}</div>
-      <div className="product_desc">{price}</div>
-    </div>
-  </div>
-);
+  )
+};
 
 Card.propTypes = Interfaces
 Card.defaultProps = defaultProps

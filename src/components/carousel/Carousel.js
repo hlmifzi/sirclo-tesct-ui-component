@@ -41,7 +41,6 @@ export const Carousel = ({ imageLists, id, ...rest }) => {
       <div className='list__banner' id={id}>
         {
           imageLists.map((v, i) => {
-            console.log(i)
             return (
               <img
                 key={i}

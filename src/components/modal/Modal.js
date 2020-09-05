@@ -1,25 +1,22 @@
 import React, { useState } from 'react'
 import './modal.scss'
-import { useDidMount } from '../../../../../utils/componentLifeCycle'
+import useHome from '../../../../../page/home/hook/useHome'
 
 export const Modal = () => {
     const [fadeIn, setFadeIn] = useState('fadeIn')
     const [fadeOut, setFadeOut] = useState('')
     const [hidden, setHidden] = useState('')
+    const { _closeModal } = useHome().action
+    const { product } = useHome().state
+
 
     const modalClose = () => {
+        _closeModal()
         setFadeIn('')
         setFadeOut('fadeOut')
         setTimeout(() => {
             setHidden('hidden')
         }, 500);
-    }
-
-    const openModal = () => {
-        setFadeIn('fadeIn')
-        setFadeOut('')
-        setHidden('')
-
     }
 
     return (
@@ -31,7 +28,7 @@ export const Modal = () => {
                     class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
                     <div class="modal-content py-4 text-left px-6">
                         <div class="flex justify-between items-center pb-3">
-                            <p class="text-2xl font-bold">Header</p>
+                            <p class="text-2xl font-bold">{product?.name}</p>
                             <div class="modal-close cursor-pointer z-50" onClick={modalClose}>
                                 <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                     viewBox="0 0 18 18">
@@ -42,7 +39,8 @@ export const Modal = () => {
                             </div>
                         </div>
                         <div class="my-5">
-                            <p>Inliberali Persius Multi iustitia pronuntiaret expeteretur sanos didicisset laus angusti ferrentur arbitrium arbitramur huic desiderent.?</p>
+                            <img src={`${product?.image_file}`} alt="" style={{ width: '100%' }} />
+                            <p>{product?.price}</p>
                         </div>
                         <div class="flex justify-end pt-2">
                             <button
@@ -50,7 +48,7 @@ export const Modal = () => {
                                 onClick={modalClose}
                             >Cancel</button>
                             <button
-                                class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Confirm</button>
+                                class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">Beli</button>
                         </div>
                     </div>
                 </div>
