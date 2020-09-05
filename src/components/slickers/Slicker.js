@@ -42,16 +42,27 @@ export const Slicker = ({ title, listProducts, slickerId, ...rest }) => {
       <div className="slicker">
         <div className="slicker__top">
           <p>{title.toUpperCase()}</p>
-          <div> . . . </div>
+          <ol class="carousel-indicators">
+            <li class="inline-block mr-3">
+              <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+            </li>
+            <li class="inline-block mr-3">
+              <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+            </li>
+            <li class="inline-block mr-3">
+              <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray hover:text-black-700">•</label>
+            </li>
+          </ol>
         </div>
 
         <div className="w-full px-16">
           <div className="slicker__product" id={slickerId}>
             {
               listProducts.map((v, i) => {
-                const discountExample = i === 3 ? 30 : false
+                const discountExample = i === 3 ? 30 : 0
                 return (
                   <Card
+                    key={i}
                     image_file={`https://${v.image_file}`}
                     name={v.name}
                     price={`IDR 150, 000`}

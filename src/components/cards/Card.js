@@ -23,12 +23,27 @@ export const Card = (props) => {
   const { image_file, name, price, discount } = props
   const { _openModal } = useHome().action
 
+  const numberPrice = price.match(/\d/g).join("")
+
+  const stripPrice = discount ?
+    <>
+      <div className="product_desc" >
+        <a style={{ textDecoration: 'line-through' }}>{price}</a>&nbsp;&nbsp;
+        <a className="product_desc color-gray" >IDR {numberPrice - (discount / 100 * numberPrice)}</a>
+      </div>
+    </>
+
+    :
+    <div className="product_desc" >{price}</div>
+
+
+
   return (
     <div className="card" onClick={() => _openModal(props)}>
       <div className="card__image">
         <img src={image_file} alt={name} />
         {
-          discount &&
+          discount != 0 &&
           <>
             <div className="badge__diskon">
               <p>
@@ -43,7 +58,7 @@ export const Card = (props) => {
       <div className="slicker__paragraph">
         <div className="product__category__card">Accessories</div>
         <div className="product_desc">{name}</div>
-        <div className="product_desc">{price}</div>
+        {stripPrice}
       </div>
     </div>
   )

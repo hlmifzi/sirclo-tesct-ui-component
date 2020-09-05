@@ -21,19 +21,19 @@ export const Carousel = ({ imageLists, id, ...rest }) => {
   const onClickNextSlide = () => {
     let scrollAmount = 0;
     const slideTimer = setInterval(() => {
-      document.getElementById(id).scrollLeft += 30;
-      scrollAmount += 30;
+      document.getElementById(id).scrollLeft += 400;
+      scrollAmount += 400;
       if (scrollAmount >= 300) window.clearInterval(slideTimer);
-    }, 25);
+    }, 100);
   }
 
   const onClickPreviousSlide = () => {
     let scrollAmount = 0;
     const slideTimer = setInterval(function () {
-      document.getElementById(id).scrollLeft -= 30;
-      scrollAmount += 30;
+      document.getElementById(id).scrollLeft -= 400;
+      scrollAmount += 400;
       if (scrollAmount >= 300) window.clearInterval(slideTimer);
-    }, 25);
+    }, 100);
   }
 
   return (
