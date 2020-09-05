@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './carousel.scss';
 
@@ -16,6 +16,8 @@ const defaultProps = {
 };
 
 export const Carousel = ({ imageLists, id, ...rest }) => {
+
+  const [checked, setChecked] = useState('checked')
   return (
 
     <div className="carousel relative shadow-2xl bg-white">
@@ -25,7 +27,7 @@ export const Carousel = ({ imageLists, id, ...rest }) => {
           imageLists.map((v, i) => {
             return (
               <div key={i}>
-                <input className="carousel-open" type="radio" id={`carousel-${i}`} name="carousel" aria-hidden="true" hidden="" defaultChecked />
+                <input className="carousel-open" type="radio" id={`carousel-${i}`} onChange={() => !checked} name="carousel" aria-hidden="true" hidden="" checked={checked} />
                 <div className="carousel-item absolute opacity-0" >
                   <img
                     key={i}

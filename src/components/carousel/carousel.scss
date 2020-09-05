@@ -23,12 +23,12 @@
         text-align: center;
         z-index: 0.3;
     }
-    #carousel-0:checked ~ .control-0 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-    #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(2) .carousel-bullet{
+    #carousel-0:checked ~ .control-0 ~ .carousel-indicators li:nth-child(0) .carousel-bullet,
+    #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet{
         color: #000;  
     }
     
-    // .carousel-open{
-    //     visibility: hidden;
-    // }
+    .carousel-open{
+        visibility: hidden;
+    }
 }
