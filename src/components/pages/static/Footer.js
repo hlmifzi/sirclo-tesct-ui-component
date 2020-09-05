@@ -1,8 +1,8 @@
 import React from 'react'
-import { logoFooter } from '../../../../index'
+import logoFooter from '../../../resource/logoFooter.png'
 import './static.scss'
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <footer>
             <section className="flex px-16 pt-20 flex-wrap justify-between footer__section ">
@@ -56,4 +56,3 @@ const Footer = () => {
     )
 }
 
-export default Footer

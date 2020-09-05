@@ -1,7 +1,7 @@
 import React from 'react'
 import './static.scss'
 
-const footerDescription = () => {
+export const FooterDescription = () => {
     return (
         <section className="px-16 flex-wrap">
             <div className="w-full description__shop py-5 mt-20">
@@ -18,4 +18,3 @@ const footerDescription = () => {
     )
 }
 
-export default footerDescription

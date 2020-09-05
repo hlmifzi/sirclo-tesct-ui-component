@@ -1,8 +1,8 @@
 import React from 'react'
 import './static.scss'
-import { Icon } from '../../../../index'
+import Icon from '../../icons/Icon'
 
-const FooterSubcribe = () => {
+export const FooterSubcribe = () => {
     return (
         <section className="flex justify-center flex-wrap items-center subcribe__section ">
             <div className="flex">
@@ -19,4 +19,3 @@ const FooterSubcribe = () => {
     )
 }
 
-export default FooterSubcribe
