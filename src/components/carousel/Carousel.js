@@ -33,7 +33,7 @@ export const Carousel = ({ imageLists, id, ...rest }) => {
                     key={i}
                     src={`https://${v.image_file}`}
                     alt={v.title}
-                    style={{ width: '100%', height: '100%', maxHeight: '700px' }}
+                    style={{ width: '100%', height: '100%', maxHeight: '800px' }}
                   />
                 </div>
                 <label htmlFor={`carousel-${i}`} className={`prev control-${i} w-10 h-10 absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-black bg-black hover:bg-white leading-tight text-center inset-y-0 left-0 my-auto`} >‹</label>
