@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from '@material-ui/core'
 
@@ -26,70 +26,74 @@ const defaultProps = {
 
 };
 
-export const Header = ({ menus, isLoggin }) => (
-  <div className="header">
-    <header>
-      <div className="header__top">
-        <div className="menu-toogle">
-          <span></span>
-          <span></span>
-          <span></span>
+export const Header = ({ menus, isLoggin }) => {
+  const [toogleMenu, setToogleMenu] = useState(false)
+  return (
+    <div className="header">
+      <header>
+        <div className="header__top">
+          <div className="menu-toogle">
+            <input type="checkbox" onClick={() => setToogleMenu(!toogleMenu)} />
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className="header__language__top ml-6">
+            <select name="cars" id="cars">
+              <option value="volvo">IDR</option>
+              <option value="saab">US</option>
+            </select>
+          &nbsp;
+          &nbsp;
+          <p>BAHASA - <b>ENGLISH</b></p>
+          </div>
+          <div className={`header__menu ${toogleMenu && 'slide'}`}>
+            {
+              menus.map((v, i) => (
+                <div key={i} className="header__option" onClick={() => window.open(v.url)} >
+                  {v.title}
+                </div>
+              ))
+            }
+          </div>
+
+          <div className="header__search">
+            <Icon.Search />
+          </div>
         </div>
-        <div className="header__language__top ml-6">
+      </header>
+
+      <div className="header__bottom justify-center flex-wrap items-center">
+
+        <div className="header__language">
           <select name="cars" id="cars">
             <option value="volvo">IDR</option>
             <option value="saab">US</option>
           </select>
-          &nbsp;
-          &nbsp;
           <p>BAHASA - <b>ENGLISH</b></p>
         </div>
-        <div className="header__menu">
-          {
-            menus.map((v, i) => (
-              <div key={i} className="header__option" onClick={() => window.open(v.url)} >
-                {v.title}
-              </div>
-            ))
-          }
+
+        <div className="header__logo__middle">
+          <img
+            src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
+            alt="brand-logo"
+          />
         </div>
 
-        <div className="header__search">
-          <Icon.Search />
-        </div>
-      </div>
-    </header>
-
-    <div className="header__bottom justify-center flex-wrap items-center">
-
-      <div className="header__language">
-        <select name="cars" id="cars">
-          <option value="volvo">IDR</option>
-          <option value="saab">US</option>
-        </select>
-        <p>BAHASA - <b>ENGLISH</b></p>
-      </div>
-
-      <div className="header__logo__middle">
-        <img
-          src="https://i.ibb.co/C9mqBZ7/Screen-Shot-2020-09-02-at-12-00-18-AM.png"
-          alt="brand-logo"
-        />
-      </div>
-
-      <div className="header__right">
-        {isLoggin ? 'Hi, Helmi' : "Login / Register"}
-        <div className="header__cart">
-          <IconButton>
-            <Icon.LocalMall />
-          </IconButton>
+        <div className="header__right">
+          {isLoggin ? 'Hi, Helmi' : "Login / Register"}
+          <div className="header__cart">
+            <IconButton>
+              <Icon.LocalMall />
+            </IconButton>
           0
         </div>
+        </div>
       </div>
-    </div>
 
-  </div >
-);
+    </div >
+  )
+};
 
 Header.propTypes = Interfaces
 Header.defaultProps = defaultProps

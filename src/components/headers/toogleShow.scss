@@ -1,0 +1,35 @@
+.menu-toogle {
+    display: flex !important;
+  }
+
+  .header__menu{
+    position :absolute !important;
+    min-height: 50px;
+    flex-direction: column !important;;
+    background-color: var(--n-900);
+    color: var(--n-100);
+    z-index: 1;
+    top: 170px;
+    width: 100%;
+    transform: translateY(-200%);
+    transition: all 1s;
+    z-index: -1;
+  }
+
+  .header__menu.slide{
+    transform: translateY(0);
+
+  }
+  
+  .header__option{
+      display: flex;
+      min-height: 50px;
+      cursor: pointer;
+  }
+  .header__option:hover{
+    display: flex;
+    min-height: 50px;
+    background-color: var(--n-100);
+    color: var(--n-900);
+    cursor: pointer;
+}
