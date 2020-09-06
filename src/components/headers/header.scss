@@ -11,8 +11,7 @@
   @include spaceBetweenFlex();
   background-color: var(--n-300);
   color: var(--n-900);
-  padding: 0 20px;
- 
+  min-height: 50px;
   font-size: 12px;
   width: 100%;
 
@@ -83,4 +82,114 @@
 .header__cart{
   @include alignFlex(center);
 }
+
+.menu-toogle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.menu-toogle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--n-900);
+}
+
+.header__language__top{
+  display: none;
+}
+
+
+
+
+@media only screen and (min-width: 300px) and (max-width: 700px)  {
+  .header__language{
+    display:none !important;
+  }
+  .header__language__top{
+    display:flex !important;
+  }
+
+  .menu-toogle {
+    display: flex !important;
+  }
+  
+  .header__option{
+      display:none !important;
+      min-height: 50px;
+  }
+
+  .header__bottom{
+    display: flex;
+    justify-content: space-between !important;
+  }
+
+  .header__logo__middle{
+    justify-content: flex-start !important;
+  }
+  .header__right{
+    justify-content: flex-end !important;
+  }
+
+  .image__section > img {
+    margin-right: 0;
+  }
+
+  .section__carousel{
+    padding:0 !important;
+  }
+
+  .input__subcribe{
+    margin: 0 !important;
+  }
+  .footer__section{
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .fast__menu{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1272px)  {
+  .image__section > img {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 980px)  {
+  .menu-toogle {
+    display: flex !important;
+  }
+  
+  .header__option{
+      display:none !important;
+      min-height: 50px;
+  }
+
+  .header__bottom{
+    display: flex;
+    justify-content: space-between !important;
+  }
+
+  .header__logo__middle{
+    justify-content: flex-start !important;
+  }
+  .header__right{
+    justify-content: flex-end !important;
+  }
+
+  .image__section > img {
+    margin-right: 0;
+  }
+
+}
+
 

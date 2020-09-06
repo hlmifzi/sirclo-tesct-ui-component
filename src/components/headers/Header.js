@@ -30,6 +30,20 @@ export const Header = ({ menus, isLoggin }) => (
   <div className="header">
     <header>
       <div className="header__top">
+        <div className="menu-toogle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="header__language__top ml-6">
+          <select name="cars" id="cars">
+            <option value="volvo">IDR</option>
+            <option value="saab">US</option>
+          </select>
+          &nbsp;
+          &nbsp;
+          <p>BAHASA - <b>ENGLISH</b></p>
+        </div>
         <div className="header__menu">
           {
             menus.map((v, i) => (
@@ -39,6 +53,7 @@ export const Header = ({ menus, isLoggin }) => (
             ))
           }
         </div>
+
         <div className="header__search">
           <Icon.Search />
         </div>
