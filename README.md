@@ -1,4 +1,4 @@
-This project was bootstrapped with [Story](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [react app](https://github.com/facebook/create-react-app) &  [storybook](https://storybook.js.org/).
 
 See the sirclo Storybook site : https://sirclo-commerce-ui.netlify.app/
 
